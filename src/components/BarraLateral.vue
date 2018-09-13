@@ -4,8 +4,8 @@
   absolute>
 
   <div class="userView">
-	   <h5>GCP</h5>
-			<p></p>
+	<h5>GCP</h5>
+  <p></p>
 	</div>
 
   <v-layout row>
@@ -13,8 +13,6 @@
 
         <v-card>
             <v-spacer></v-spacer>
-          </v-toolbar>
-
           <v-list>
             <v-list-group
               v-for="item in items"
@@ -23,6 +21,7 @@
               :prepend-icon="item.action"
               no-action
             >
+
               <v-list-tile slot="activator">
                 <v-list-tile-content>
                   <v-list-tile-title>{{ item.title }}</v-list-tile-title>
@@ -34,13 +33,14 @@
                 :key="subItem.title"
                 :to="subItem.direction"
               >
-                <v-list-tile-content >
-                  <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-                </v-list-tile-content>
 
                 <v-list-tile-action>
                   <v-icon>{{ subItem.action }}</v-icon>
                 </v-list-tile-action>
+                <v-list-tile-content >
+                  <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                </v-list-tile-content>
+
               </v-list-tile>
             </v-list-group>
           </v-list>
