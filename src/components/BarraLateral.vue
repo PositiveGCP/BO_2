@@ -62,10 +62,10 @@ export default {
         title: 'Altas',
         active:true,
         items: [
-          {title: 'Personas', action: 'group_add' },
-          {title: 'Cuentas', action: 'business'  },
-          {title: 'Usuarios', action: 'account_circle'  },
-          {title: 'Solicitudes', action: 'contact_mail'  },
+          {title: 'Personas', action: 'group_add' , direction: '/personas'},
+          {title: 'Cuentas', action: 'business' , direction: '/cuentas' },
+          {title: 'Usuarios', action: 'account_circle' , direction: '/usuarios' },
+          {title: 'Solicitudes', action: 'contact_mail', direction: '/solicitudes'  },
 
         ]
       },
@@ -74,15 +74,15 @@ export default {
         active: true,
         items: [
           {title: 'Resultados', action: 'offline_pin' , direction: '/resultados' },
-          {title: 'Facturacion', action: 'monetization_on'  },
+          {title: 'Facturacion', action: 'monetization_on', direction: '/facturacion'  },
         ]
       },
       {
         title: 'Soporte',
         active: true,
         items: [
-          {title: 'Casos', action: 'storage'  },
-          {title: 'Contacto', action: 'build'  },
+          {title: 'Casos', action: 'storage' , direction: '/casos' },
+          {title: 'Contacto', action: 'build' , direction: '/contacto' },
         ]
       },
     ]
