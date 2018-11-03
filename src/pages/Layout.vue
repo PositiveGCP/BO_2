@@ -7,6 +7,8 @@
     <v-toolbar app><tbar></tbar></v-toolbar>
     <v-content>
       <v-container fluid>
+        <breadcrumb>
+        </breadcrumb>
         <transition name="fade">
             <router-view></router-view>
         </transition>
@@ -17,10 +19,12 @@
 </template>
 
 <script>
+import Breadcrumb from '@/components/Breadcrumb.vue'
 import BarraLateral from "@/components/BarraLateral.vue"
 import ToolBar from "@/components/ToolBar.vue"
 export default {
   components: {
+    breadcrumb: Breadcrumb,
     navbar: BarraLateral,
     tbar: ToolBar
   }

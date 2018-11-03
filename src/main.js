@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
+import VeeValidate from 'vee-validate';
 import 'vuetify/dist/vuetify.min.css'
 import VueRouter from 'vue-router'
 import Layout from '@/pages/Layout.vue'
@@ -12,9 +13,12 @@ import Resultados from '@/pages/Resultados/Resultados.vue'
 import Facturacion from '@/pages/Facturacion/Facturacion.vue'
 import Casos from '@/pages/Casos/Casos.vue'
 import Contacto from '@/pages/Contacto/Contacto.vue'
+import FormUsuario from '@/components/Forms/FormUsuario.vue'
+
 
 Vue.use(VueRouter)
 Vue.use(Vuetify)
+Vue.use(VeeValidate)
 
 Vue.config.productionTip = false
 
@@ -30,7 +34,7 @@ const routes =
   {path: '/facturacion', component:Facturacion},
   {path: '/casos', component:Casos},
   {path: '/contacto', component:Contacto},
-
+  {path: '/personas/formusuario', component:FormUsuario},
 ]
 
 //Mode: history guarda en el navegador la ruta para regresarse
