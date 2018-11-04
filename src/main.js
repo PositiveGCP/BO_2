@@ -15,7 +15,7 @@ import Casos from '@/pages/Casos/Casos.vue'
 import Contacto from '@/pages/Contacto/Contacto.vue'
 import FormUsuario from '@/components/Forms/FormUsuario.vue'
 import HistorialEvaluaciones from '@/components/Forms/HistorialEvaluaciones.vue'
-
+import FormCuentas from '@/components/Forms/FormCuentas.vue'
 
 Vue.use(VueRouter)
 Vue.use(Vuetify)
@@ -37,6 +37,8 @@ const routes =
   {path: '/contacto', component:Contacto},
   {path: '/personas/formusuario', component:FormUsuario},
   {path: '/personas/historialevaluaciones', component:HistorialEvaluaciones},
+  {path: '/cuentas/formcuentas', component:FormCuentas},
+
 ]
 
 //Mode: history guarda en el navegador la ruta para regresarse
