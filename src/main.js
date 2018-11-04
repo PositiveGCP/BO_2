@@ -14,6 +14,7 @@ import Facturacion from '@/pages/Facturacion/Facturacion.vue'
 import Casos from '@/pages/Casos/Casos.vue'
 import Contacto from '@/pages/Contacto/Contacto.vue'
 import FormUsuario from '@/components/Forms/FormUsuario.vue'
+import HistorialEvaluaciones from '@/components/Forms/HistorialEvaluaciones.vue'
 
 
 Vue.use(VueRouter)
@@ -35,6 +36,7 @@ const routes =
   {path: '/casos', component:Casos},
   {path: '/contacto', component:Contacto},
   {path: '/personas/formusuario', component:FormUsuario},
+  {path: '/personas/historialevaluaciones', component:HistorialEvaluaciones},
 ]
 
 //Mode: history guarda en el navegador la ruta para regresarse
