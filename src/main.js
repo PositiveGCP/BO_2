@@ -13,9 +13,11 @@ import Resultados from '@/pages/Resultados/Resultados.vue'
 import Facturacion from '@/pages/Facturacion/Facturacion.vue'
 import Casos from '@/pages/Casos/Casos.vue'
 import Contacto from '@/pages/Contacto/Contacto.vue'
-import FormUsuario from '@/components/Forms/FormUsuario.vue'
+import FormPersonas from '@/components/Forms/FormPersonas.vue'
 import HistorialEvaluaciones from '@/components/Forms/HistorialEvaluaciones.vue'
 import FormCuentas from '@/components/Forms/FormCuentas.vue'
+import FormUsuarios from '@/components/Forms/FormUsuarios.vue'
+
 
 Vue.use(VueRouter)
 Vue.use(Vuetify)
@@ -35,9 +37,11 @@ const routes =
   {path: '/facturacion', component:Facturacion},
   {path: '/casos', component:Casos},
   {path: '/contacto', component:Contacto},
-  {path: '/personas/formusuario', component:FormUsuario},
+  {path: '/personas/formpersonas', component:FormPersonas},
   {path: '/personas/historialevaluaciones', component:HistorialEvaluaciones},
   {path: '/cuentas/formcuentas', component:FormCuentas},
+  {path: '/usuarios/formusuarios', component:FormUsuarios},
+
 
 ]
 
