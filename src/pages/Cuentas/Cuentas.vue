@@ -5,8 +5,8 @@
       <v-data-table
           :headers="headers"
           :items="desserts"
-          hide-actions
           item-key="name"
+          class="font"
         >
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
@@ -49,13 +49,12 @@ export default {
           {
             text: 'Nombre Comercial',
             align: 'left',
-            value: 'name',
-            sortable: false,
+            value: 'nombre_comercial',
           },
-          { text: 'Datos Generales', value: 'contacto' },
-          { text: 'Pais y Localidad', value: 'entidad' },
-          { text: 'Tipo' , sortable: false, value: 'iron' },
-          { text: '' , sortable: false, value: 'iron' },
+          { text: 'Datos Generales', value: 'datosgen' },
+          { text: 'Pais y Localidad', value: 'pais'},
+          { text: 'Tipo' , value: 'tipo', },
+          { text: '' , sortable: false,},
         ],
         desserts: [
           {
@@ -98,6 +97,88 @@ export default {
             localidad: '54070',
             tipo: 'GCP',
           },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Positive Compliance LLC',
+            datosgen: 'Positive Compliance LLC',
+            rfc: 'PCO161216LZ4',
+            pais: 'México',
+            localidad: '07700',
+            tipo: 'Positive',
+
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Recurso Confiable',
+            datosgen: 'Recurso Confiable SA de CV',
+            rfc: 'RCO970529F57',
+            pais: 'México',
+            localidad: '54030',
+            tipo: 'GCP',
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'MABE',
+            datosgen: 'MABE Mexico',
+            rfc: 'MAB 899009 1A7',
+            pais: 'México',
+            localidad: '11000',
+            tipo: 'GCP',
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Recubre',
+            datosgen: 'SERVIREC SA DE CV',
+            rfc: 'SER081204ST9',
+            pais: 'México',
+            localidad: '54070',
+            tipo: 'GCP',
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Positive Compliance LLC',
+            datosgen: 'Positive Compliance LLC',
+            rfc: 'PCO161216LZ4',
+            pais: 'México',
+            localidad: '07700',
+            tipo: 'Positive',
+
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Recurso Confiable',
+            datosgen: 'Recurso Confiable SA de CV',
+            rfc: 'RCO970529F57',
+            pais: 'México',
+            localidad: '54030',
+            tipo: 'GCP',
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'MABE',
+            datosgen: 'MABE Mexico',
+            rfc: 'MAB 899009 1A7',
+            pais: 'México',
+            localidad: '11000',
+            tipo: 'GCP',
+          },
+          {
+            img: 'business',
+            value: false,
+            nombre_comercial: 'Recubre',
+            datosgen: 'SERVIREC SA DE CV',
+            rfc: 'SER081204ST9',
+            pais: 'México',
+            localidad: '54070',
+            tipo: 'GCP',
+          },
         ]
 }
 }
@@ -105,4 +186,5 @@ export default {
 </script>
 
 <style lang="css">
+
 </style>

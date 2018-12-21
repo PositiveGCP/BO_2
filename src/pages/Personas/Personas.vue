@@ -5,21 +5,23 @@
       <v-data-table
           :headers="headers"
           :items="desserts"
-          hide-actions
           item-key="name"
         >
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
-              <td><v-avatar outline fab>
+              <td rowspan="2"><v-avatar outline fab>
             <v-icon size=42>account_circle</v-icon>
           </v-avatar></td>
-              <td>{{ props.item.name }}</td>
-              <td>{{ props.item.cotacto }}</td>
-              <td>{{ props.item.entidad }}</td>
-              <td >          <v-btn to="/personas/historialevaluaciones" outline small fab color="black">
+              <td rowspan="2">{{ props.item.name }}</td>
+              <td >{{ props.item.correo }}</td>
+              <td rowspan="2">{{ props.item.entidad }}</td>
+              <td rowspan="2">          <v-btn to="/personas/historialevaluaciones" outline small fab color="black">
             <v-icon size=25>playlist_add_check</v-icon>
           </v-btn></td>
 
+            </tr>
+            <tr>
+              <td>{{ props.item.telefono }}</td>
             </tr>
           </template>
         </v-data-table>
@@ -46,7 +48,7 @@ export default {
             align: 'left',
             value: 'name'
           },
-          { text: 'Correo o Teléfono', value: 'contacto' },
+          { text: 'Correo / Teléfono', value: 'contacto' },
           { text: 'Entidad', value: 'entidad' },
           { text: 'Evaluaciones' , sortable: false, value: 'iron' },
         ],
@@ -55,31 +57,35 @@ export default {
             img: 'logo',
             value: false,
             name: 'Juárez Cortés Luis Felipe',
-            cotacto: 'aistematico29@gmail.com 5585503033',
-            entidad: 'Recurso Confiable',
+            correo: 'aistematico29@gmail.com',
+            telefono: '5585503033',
+            entidad: 'Becurso Confiable',
             iron: 'lapiz verde',
           },
                  {
             img: 'logo',
             value: false,
             name: 'Angel Rodríguez Valladarest',
-            cotacto: 'bistematico29@gmail.com 5585503033',
-            entidad: 'Recurso Confiable',
+            correo: 'bistematico29@gmail.com',
+            telefono: '5585503033',
+            entidad: 'Aecurso Confiable',
             iron: 'lapiz verde',
           },
                  {
             img: 'logo',
             value: false,
             name: 'Javier Rodríguez Valladarest',
-            cotacto: 'distematico29@gmail.com 5585503033',
-            entidad: 'Recurso Confiable',
+            correo: 'distematico29@gmail.com',
+            telefono: '5585503033',
+            entidad: 'Cecurso Confiable',
             iron: 'lapiz verde',
           },
           {
      img: 'logo',
      value: false,
      name: 'Javier Rodríguez Valladarest',
-     cotacto: 'eistematico29@gmail.com 5585503033',
+     correo: 'eistematico29@gmail.com',
+     telefono: '5585503033',
      entidad: 'Recurso Confiable',
      iron: 'lapiz verde',
    },
