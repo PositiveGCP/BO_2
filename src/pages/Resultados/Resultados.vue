@@ -15,9 +15,74 @@
           <td>{{ props.item.entidad }}</td>
           <td rowspan="2">{{ props.item.fecha }}</td>
           <td rowspan="2">{{ props.item.semaforo }}</td>
-          <td rowspan="2">          <v-btn to="/" outline small fab color="black">
-        <v-icon size=25>edit</v-icon>
-      </v-btn></td>
+          <td rowspan="2">
+            <v-menu
+                   v-model="menu"
+                   :close-on-content-click="false"
+                   :nudge-width="200"
+                   offset-x
+                 >
+                   <v-btn
+                     slot="activator"
+                     color="indigo"
+                     dark
+                   >
+                   <v-icon size=25>edit</v-icon>
+                   </v-btn>
+
+                   <v-card>
+                     <v-list>
+                       <v-list-tile avatar>
+                         <v-list-tile-avatar>
+                           <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John">
+                         </v-list-tile-avatar>
+
+                         <v-list-tile-content>
+                           <v-list-tile-title>Angel Rodríguez Valladarest</v-list-tile-title>
+                           <v-list-tile-sub-title>GCP Cumplimiento Institucional</v-list-tile-sub-title>
+                         </v-list-tile-content>
+
+                         <v-list-tile-action>
+                           <v-btn
+                             :class="fav ? 'red--text' : ''"
+                             icon
+                             @click="fav = !fav"
+                           >
+                             <v-icon>find_in_page</v-icon>
+                           </v-btn>
+                         </v-list-tile-action>
+                       </v-list-tile>
+                     </v-list>
+
+                     <v-divider></v-divider>
+
+                     <v-list>
+                       <h3> Semáforo:</h3>
+                       <v-select
+                         v-validate="'required'"
+                         :items="semaforos"
+                         v-model="semaforo"
+                         label="Semáforo"
+                         data-vv-name="Seleccione una Opción"
+                         required
+                       ></v-select>
+                        <h3> Comentarios:</h3>
+                           <v-textarea
+                           name="input-7-4"
+                           label="Análisis de Resultados"
+                           value=""
+                           ></v-textarea>
+                     </v-list>
+
+                     <v-card-actions>
+                       <v-spacer></v-spacer>
+
+                       <v-btn flat @click="menu = false">Cancel</v-btn>
+                       <v-btn color="primary" flat @click="menu = false">Save</v-btn>
+                     </v-card-actions>
+                   </v-card>
+                 </v-menu>
+               </td>
 
           <td rowspan="2"><v-btn
         :disabled="dialog"
@@ -64,7 +129,14 @@ export default {
   data () {
  return{
   dialog: false,
-
+  semaforo: null,
+  semaforos: [
+    'Riesgo',
+    'Carente',
+    'Regular',
+    'Bien',
+    'Excelente'
+  ],
   headers: [
           { text: '', sortable: false, value: 'img' },
           {
