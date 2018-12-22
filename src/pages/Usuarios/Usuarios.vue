@@ -10,8 +10,8 @@
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
               <td><v-avatar outline fab>
-            <v-icon size=42>account_circle</v-icon>
-          </v-avatar></td>
+                <img src="@/assets/femenino.png" alt="img_user">
+              </v-avatar></td>
               <td>{{ props.item.name }}</td>
               <td >{{ props.item.correo }}</td>
               <td>{{ props.item.empresa }}</td>

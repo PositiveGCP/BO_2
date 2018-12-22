@@ -11,8 +11,8 @@
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
               <td rowspan="2"><v-avatar outline fab>
-            <v-icon size=42>{{ props.item.img }}</v-icon>
-          </v-avatar></td>
+                <img src="@/assets/build.png" alt="img_user">
+              </v-avatar> </td>
               <td rowspan="2">{{ props.item.nombre_comercial }}</td>
               <td >{{ props.item.datosgen }}</td>
               <td >{{ props.item.pais }}</td>

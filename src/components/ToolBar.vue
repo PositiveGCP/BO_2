@@ -10,11 +10,11 @@
     <v-spacer></v-spacer>
     <v-avatar size="35">
        <img
-         src="@/assets/logo.png"
+         src="@/assets/masculino.png"
          alt="img_user"
        >
      </v-avatar>
-     <h3>José Manuel Fragoso Oseguera</h3>
+     <h4>José Manuel Fragoso Oseguera</h4>
 
      <v-avatar size="35">
         <img
@@ -22,13 +22,13 @@
           alt="img_user"
         >
       </v-avatar>
-      <h3>Positive Compliance LLC</h3>
+      <h4>Positive Compliance LLC</h4>
 
-<v-btn to="/resultados"outline small fab color="black">
+<v-btn to="/resultados" color="green darken-1" dark>
         <v-icon>help_outline</v-icon>
       </v-btn>
 
-<v-btn outline small fab color="black">
+<v-btn color="red darken-1" dark>
         <v-icon>close</v-icon>
       </v-btn>
 
