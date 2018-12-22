@@ -3,7 +3,6 @@
   <v-data-table
       :headers="headers"
       :items="desserts"
-      hide-actions
       item-key="name"
     >
       <template slot="items" slot-scope="props">
@@ -20,9 +19,35 @@
         <v-icon size=25>edit</v-icon>
       </v-btn></td>
 
-          <td ><v-btn outline small fab color="black">
+          <td ><v-btn
+        :disabled="dialog"
+        :loading="dialog"
+        class="white--text"
+        color="blue darken-1"
+        @click="dialog = true">
         <v-icon size=25>description</v-icon>
-      </v-btn></td>
+      </v-btn>
+      <v-dialog
+      v-model="dialog"
+      hide-overlay
+      persistent
+      width="300"
+      >
+      <v-card
+        color="primary"
+        dark
+      >
+     <v-card-text>
+       Generando Reporte GCP
+       <v-progress-linear
+         indeterminate
+         color="white"
+         class="mb-0"
+       ></v-progress-linear>
+     </v-card-text>
+   </v-card>
+ </v-dialog>
+    </td>
 
         </tr>
       </template>
@@ -35,6 +60,8 @@
 export default {
   data () {
  return{
+  dialog: false,
+
   headers: [
           { text: '', sortable: false, value: 'img' },
           {
@@ -95,9 +122,49 @@ export default {
      iron: 'lapiz verde',
      reporte:'reporte'
    },
+   {
+   img: 'logo',
+   value: false,
+   name: 'Avier Rodríguez Valladarest',
+   area: 'Beguridad',
+   entidad: 'CONFIANZA',
+   fecha: '2018/09/08 08:04:11',
+   semaforo: 'Excelente',
+   iron: 'lapiz verde',
+   reporte:'reporte'
+ },
+ {
+ img: 'logo',
+ value: false,
+ name: 'Cavier Rodríguez Valladarest',
+ area: 'Aeguridad',
+ entidad: 'BONFIANZA',
+ fecha: '2018/09/08 08:04:11',
+ semaforo: 'Excelente',
+ iron: 'lapiz verde',
+ reporte:'reporte'
+},
+{
+img: 'logo',
+value: false,
+name: 'Davier Rodríguez Valladarest',
+area: 'Eeguridad',
+entidad: 'NFIANZA',
+fecha: '2018/09/08 08:04:11',
+semaforo: 'Regular',
+iron: 'lapiz verde',
+reporte:'reporte'
+},
 
         ]
 }
+},
+watch: {
+  dialog (val) {
+    if (!val) return
+
+    setTimeout(() => (this.dialog = false), 4000)
+  }
 }
 }
 </script>

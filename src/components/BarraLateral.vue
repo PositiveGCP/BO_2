@@ -94,12 +94,12 @@ export default {
 <style lang="css">
 .userView{
   padding-top: 7px;
-      background: #26b1ff;
+      background: #3b88de;
       height: 65px;
       width: 300px;
       vertical-align: middle;
       text-align: center;
-      color: #ebebeb;
+      color: white;
       font-family: 'Roboto', Arial, sans-serif;
       font-size: 34px;
 }
