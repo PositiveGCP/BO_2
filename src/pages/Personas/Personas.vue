@@ -15,7 +15,9 @@
               <td rowspan="2">{{ props.item.name }}</td>
               <td >{{ props.item.correo }}</td>
               <td rowspan="2">{{ props.item.entidad }}</td>
-              <td rowspan="2">          <v-btn to="/personas/historialevaluaciones" outline small fab color="black">
+              <td rowspan="2"> <v-btn to="/personas/historialevaluaciones" slot="activator"
+              color="indigo"
+              dark>
             <v-icon size=25>playlist_add_check</v-icon>
           </v-btn></td>
 

@@ -17,7 +17,9 @@
               <td >{{ props.item.datosgen }}</td>
               <td >{{ props.item.pais }}</td>
               <td rowspan="2" >{{ props.item.tipo }}</td>
-              <td rowspan="2">          <v-btn to="/cuentas/formcuentas" outline small fab color="black">
+              <td rowspan="2">          <v-btn to="/cuentas/formcuentas" slot="activator"
+              color="indigo"
+              dark>
             <v-icon size=25>edit</v-icon>
           </v-btn></td>
 
