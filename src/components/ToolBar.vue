@@ -24,7 +24,7 @@
       </v-avatar>
       <h4>Positive Compliance LLC</h4>
 
-<v-btn to="/resultados" color="green darken-1" dark>
+<v-btn to="/resultados" color="blue-grey" dark>
         <v-icon>help_outline</v-icon>
       </v-btn>
 
