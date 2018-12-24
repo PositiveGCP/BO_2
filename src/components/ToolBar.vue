@@ -1,10 +1,9 @@
 <template lang="html">
   <v-toolbar color="grey lighten-5" app absolute>
     <v-text-field
-      solo-inverted
       flat
       hide-details
-      label="Buscar ..."
+      label="Buscar"
       prepend-inner-icon="search"
     ></v-text-field>
     <v-spacer></v-spacer>
