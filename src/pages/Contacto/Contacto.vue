@@ -5,7 +5,7 @@
 
       </div>
       <div class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right">
-        <v-btn fab dark color="blue" :to="'/usuarios/formusuarios'">
+        <v-btn fab dark color="blue" :to="'/contacto/formcontacto'">
           <v-icon dark>add</v-icon>
         </v-btn>
       </div>
