@@ -120,7 +120,35 @@
         </tr>
       </template>
     </v-data-table>
+    <div class="v-btn v-btn--bottom v-btn--floating v-btn--fixed v-btn--right">
+      <v-speed-dial
+        v-model="fab"
+        :open-on-hover="hover"
+        :transition="transition"
+      >
+      <v-btn fab dark slot="activator" v-model="fab" color="blue">
+        <v-icon >add</v-icon>
+        <v-icon>close</v-icon>
+      </v-btn>
+      <v-btn
+   fab
+   dark
+   small
+   color="green"
+ >
+   <v-icon>insert_chart</v-icon>
+ </v-btn>
+ <v-btn
+   fab
+   dark
+   small
+   color="red"
+ >
+   <v-icon>filter_list</v-icon>
+ </v-btn>
+</v-speed-dial>
 
+    </div>
   </div>
 </template>
 
@@ -130,6 +158,16 @@ export default {
  return{
   dialog: false,
   semaforo: null,
+  direction: 'top',
+   fab: false,
+   fling: false,
+   hover: false,
+   tabs: null,
+   top: false,
+   right: true,
+   bottom: true,
+   left: false,
+   transition: 'slide-y-reverse-transition',
   semaforos: [
     'Riesgo',
     'Carente',
