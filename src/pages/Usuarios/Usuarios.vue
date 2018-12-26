@@ -17,10 +17,13 @@
               <td>{{ props.item.empresa }}</td>
               <td>{{ props.item.tipo }}</td>
           </v-btn></td>
-
             </tr>
-
           </template>
+          <template slot="expand" slot-scope="props">
+          <v-card flat>
+            <v-card-text>Telefono: 55-39-15-42</v-card-text>
+          </v-card>
+        </template>
         </v-data-table>
 
       </div>
@@ -67,7 +70,7 @@ export default {
                  {
             img: 'logo',
             value: false,
-            name: 'Javier Rodríguez Valladarest',
+            name: 'Avier Rodríguez Valladarest',
             correo: 'distematico29@gmail.com',
             telefono: '5585503033',
             empresa: 'Cecurso Confiable',

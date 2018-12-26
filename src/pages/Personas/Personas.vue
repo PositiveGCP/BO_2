@@ -9,23 +9,20 @@
         >
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
-              <td rowspan="2"><v-avatar outline fab>
+              <td><v-avatar outline fab>
                 <img
                   src="@/assets/masculino.png"
                   alt="img_user"
                 >          </v-avatar></td>
-              <td rowspan="2">{{ props.item.name }}</td>
-              <td >{{ props.item.correo }}</td>
-              <td rowspan="2">{{ props.item.entidad }}</td>
-              <td rowspan="2"> <v-btn to="/personas/historialevaluaciones" slot="activator"
+              <td>{{ props.item.name }}</td>
+              <td >{{ props.item.correo }} <br> {{ props.item.telefono }}</td>
+              <td>{{ props.item.entidad }}</td>
+              <td> <v-btn to="/personas/historialevaluaciones" slot="activator"
               color="indigo"
               dark>
             <v-icon size=25>playlist_add_check</v-icon>
           </v-btn></td>
 
-            </tr>
-            <tr>
-              <td>{{ props.item.telefono }}</td>
             </tr>
           </template>
         </v-data-table>

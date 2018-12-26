@@ -10,23 +10,19 @@
         >
           <template slot="items" slot-scope="props">
             <tr @click="props.expanded = !props.expanded">
-              <td rowspan="2"><v-avatar outline fab>
+              <td><v-avatar outline fab>
                 <img src="@/assets/build.png" alt="img_user">
               </v-avatar> </td>
-              <td rowspan="2">{{ props.item.nombre_comercial }}</td>
-              <td >{{ props.item.datosgen }}</td>
-              <td >{{ props.item.pais }}</td>
-              <td rowspan="2" >{{ props.item.tipo }}</td>
-              <td rowspan="2">          <v-btn to="/cuentas/formcuentas" slot="activator"
+              <td>{{ props.item.nombre_comercial }}</td>
+              <td >{{ props.item.datosgen }} <br> {{ props.item.rfc }} </td>
+              <td >{{ props.item.pais }} <br> {{ props.item.localidad }}</td>
+              <td>{{ props.item.tipo }}</td>
+              <td>          <v-btn to="/cuentas/formcuentas" slot="activator"
               color="indigo"
               dark>
             <v-icon size=25>edit</v-icon>
           </v-btn></td>
 
-            </tr>
-            <tr>
-              <td>{{ props.item.rfc }}</td>
-              <td> {{ props.item.localidad }}</td>
             </tr>
           </template>
         </v-data-table>

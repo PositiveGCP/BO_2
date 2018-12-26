@@ -7,15 +7,15 @@
     >
       <template slot="items" slot-scope="props">
         <tr @click="props.expanded = !props.expanded">
-          <td rowspan="2"><v-avatar outline fab>
+          <td><v-avatar outline fab>
             <img src="@/assets/masculino.png" alt="img_user">
           </v-avatar></td>
-          <td rowspan="2">{{ props.item.name }}</td>
-          <td rowspan="2">{{ props.item.area }}</td>
-          <td>{{ props.item.entidad }}</td>
-          <td rowspan="2">{{ props.item.fecha }}</td>
-          <td rowspan="2">{{ props.item.semaforo }}</td>
-          <td rowspan="2">
+          <td>{{ props.item.name }}</td>
+          <td>{{ props.item.area }}</td>
+          <td>{{ props.item.entidad }} <br> {{ props.item.evaluacion }}</td>
+          <td>{{ props.item.fecha }}</td>
+          <td>{{ props.item.semaforo }}</td>
+          <td>
             <v-tooltip left>
             <v-menu
                    v-model="menu"
@@ -78,44 +78,19 @@
                  <span>AGREGAR PARÁMETROS</span>
                </v-tooltip>
                </td>
-          <td rowspan="2">
+          <td>
             <v-tooltip left>
         <v-btn
         slot="activator"
-        :disabled="dialog"
-        :loading="dialog"
         class="white--text"
-        color="blue darken-1"
-        @click="dialog = true">
+        color="blue darken-1">
         <v-icon size=25>description</v-icon>
       </v-btn>
       <span>REPORTE GCP</span>
     </v-tooltip>
-      <v-dialog
-      v-model="dialog"
-      hide-overlay
-      persistent
-      width="300"
-      >
-      <v-card
-        color="primary"
-        dark
-      >
-     <v-card-text>
-       Generando Reporte GCP
-       <v-progress-linear
-         indeterminate
-         color="white"
-         class="mb-0"
-       ></v-progress-linear>
-     </v-card-text>
-   </v-card>
- </v-dialog>
+
     </td>
 
-        </tr>
-        <tr>
-          <td>{{ props.item.evaluacion }}</td>
         </tr>
       </template>
     </v-data-table>

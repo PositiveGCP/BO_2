@@ -101,7 +101,6 @@ export default {
       vertical-align: middle;
       text-align: center;
       color: white;
-      font-family: 'Roboto', Arial, sans-serif;
       font-size: 34px;
 }
 </style>
