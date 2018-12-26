@@ -6,30 +6,32 @@
         <table width='100%'>
           <tr>
             <td width='49%'><h4>*Asunto</h4><v-text-field
-              v-model="appaterno"
-              :error-messages="errors.collect('appaterno')"
+              v-model="asunto"
+              v-validate="'required'"
+              :error-messages="errors.collect('asunto')"
               label="Escriba el Asunto"
-              data-vv-name="appaterno"
+              data-vv-name="asunto"
               required
             ></v-text-field></td>
             <td width='2%'></td>
             <td width='49%'><h4>*Selecciona una Cuenta</h4>
             <v-select
               v-validate="'required'"
-              :items="encuestas"
-              v-model="encuesta"
-              :error-messages="errors.collect('encuesta')"
+              :items="cuentas"
+              v-model="cuenta"
+              :error-messages="errors.collect('cuenta')"
               label="Cuentas"
-              data-vv-name="encuesta"
+              data-vv-name="cuenta"
               required
             ></v-select></td>
           </tr>
         </table>
         <v-text-field
-          v-model="nombre"
-          :error-messages="errors.collect('nombre')"
+        v-validate="'required'"
+          v-model="descripcion"
+          :error-messages="errors.collect('descripcion')"
           label="*Descripción"
-          data-vv-name="nombre"
+          data-vv-name="descripcion"
           required
         ></v-text-field>
         <v-btn @click="clear">Borrar</v-btn>
@@ -46,27 +48,27 @@
 export default {
 
   data: () => ({
-      nombre: '',
-      appaterno: '',
-      encuesta: null,
-      encuestas: [
-        'Encuesta 1',
-        'Encuesta 2',
-        'Encuesta 3',
-        'Encuesta 4'
+      descripcion: '',
+      asunto: '',
+      cuenta: null,
+      cuentas: [
+        'Cuenta 1',
+        'Cuenta 2',
+        'Cuenta 3',
+        'Cuenta 4'
       ],
       dictionary: {
         custom: {
-          nombre: {
-            required: () => 'El Nombre No Puede Estar Vacio.',
+          descripcion: {
+            required: () => 'La Descripción No Puede Estar Vacía',
             // custom messages
           },
-          appaterno: {
-            required: () => 'El Nombre No Puede Estar Vacio.',
+          asunto: {
+            required: () => 'El Asunto No Puede Estar Vacío',
             // custom messages
           },
-          encuesta: {
-            required: () => 'El Nombre No Puede Estar Vacio.',
+          cuenta: {
+            required: () => 'Seleccione Una Cuenta',
           },
         }
       }
@@ -81,9 +83,11 @@ export default {
         this.$validator.validateAll()
       },
       clear () {
-        this.nombre = ''
-        this.appaterno = ''
-        this.encuesta = null
+        this.descripcion = ''
+        this.asunto = ''
+        this.empresa = null
+        this.cuenta = null
+        this.genero = null
         this.$validator.reset()
       }
     }
