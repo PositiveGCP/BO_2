@@ -1,7 +1,7 @@
 <template lang="html">
   <v-navigation-drawer
   permanent
-  absolute>
+  absolute dark>
 
   <div class="userView">
 	<h5>GCP</h5>
@@ -14,12 +14,14 @@
         <v-card>
             <v-spacer></v-spacer>
           <v-list>
+            <!-- sub-group hace que no se cierren-->
             <v-list-group
               v-for="item in items"
               v-model="item.active"
               :key="item.title"
               :prepend-icon="item.action"
-              no-action
+              value="true"
+
             >
 
               <v-list-tile slot="activator">
@@ -33,15 +35,14 @@
                 :key="subItem.title"
                 :to="subItem.direction"
               >
-
                 <v-list-tile-action>
                   <v-icon>{{ subItem.action }}</v-icon>
                 </v-list-tile-action>
-                <v-list-tile-content >
+                <v-list-tile-content>
                   <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
                 </v-list-tile-content>
-
               </v-list-tile>
+
             </v-list-group>
           </v-list>
         </v-card>

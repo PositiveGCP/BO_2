@@ -16,11 +16,13 @@
           <td rowspan="2">{{ props.item.fecha }}</td>
           <td rowspan="2">{{ props.item.semaforo }}</td>
           <td rowspan="2">
+            <v-tooltip left>
             <v-menu
                    v-model="menu"
                    :close-on-content-click="false"
                    :nudge-width="200"
                    offset-x
+                   slot="activator"
                  >
                    <v-btn
                      slot="activator"
@@ -42,15 +44,6 @@
                            <v-list-tile-sub-title>GCP Cumplimiento Institucional</v-list-tile-sub-title>
                          </v-list-tile-content>
 
-                         <v-list-tile-action>
-                           <v-btn
-                             :class="fav ? 'red--text' : ''"
-                             icon
-                             @click="fav = !fav"
-                           >
-                             <v-icon>find_in_page</v-icon>
-                           </v-btn>
-                         </v-list-tile-action>
                        </v-list-tile>
                      </v-list>
 
@@ -82,9 +75,13 @@
                      </v-card-actions>
                    </v-card>
                  </v-menu>
+                 <span>AGREGAR PARÁMETROS</span>
+               </v-tooltip>
                </td>
-
-          <td rowspan="2"><v-btn
+          <td rowspan="2">
+            <v-tooltip left>
+        <v-btn
+        slot="activator"
         :disabled="dialog"
         :loading="dialog"
         class="white--text"
@@ -92,6 +89,8 @@
         @click="dialog = true">
         <v-icon size=25>description</v-icon>
       </v-btn>
+      <span>REPORTE GCP</span>
+    </v-tooltip>
       <v-dialog
       v-model="dialog"
       hide-overlay
@@ -126,27 +125,35 @@
         :open-on-hover="hover"
         :transition="transition"
       >
-      <v-btn fab dark slot="activator" v-model="fab" color="blue">
-        <v-icon >add</v-icon>
-        <v-icon>close</v-icon>
-      </v-btn>
-      <v-btn
-   fab
-   dark
-   small
-   color="green"
- >
-   <v-icon>insert_chart</v-icon>
- </v-btn>
- <v-btn
-   fab
-   dark
-   small
-   color="red"
- >
-   <v-icon>filter_list</v-icon>
- </v-btn>
-</v-speed-dial>
+        <v-btn fab dark slot="activator" v-model="fab" color="blue">
+          <v-icon >add</v-icon>
+          <v-icon>close</v-icon>
+        </v-btn>
+        <v-tooltip left>
+        <v-btn
+          fab
+          dark
+          small
+          color="green"
+          slot="activator"
+          >
+            <v-icon>insert_chart</v-icon>
+        </v-btn>
+        <span>DESCARGAR REPORTE DINAMICAS</span>
+        </v-tooltip>
+        <v-tooltip left>
+        <v-btn
+          fab
+          dark
+          small
+          color="red"
+          slot="activator"
+        >
+            <v-icon>filter_list</v-icon>
+        </v-btn>
+        <span>FILTRAR BÚSQUEDA</span>
+        </v-tooltip>
+      </v-speed-dial>
 
     </div>
   </div>
@@ -154,138 +161,162 @@
 
 <script>
 export default {
-  data () {
- return{
-  dialog: false,
-  semaforo: null,
-  direction: 'top',
-   fab: false,
-   fling: false,
-   hover: false,
-   tabs: null,
-   top: false,
-   right: true,
-   bottom: true,
-   left: false,
-   transition: 'slide-y-reverse-transition',
-  semaforos: [
-    'Riesgo',
-    'Carente',
-    'Regular',
-    'Bien',
-    'Excelente'
-  ],
-  headers: [
-          { text: '', sortable: false, value: 'img' },
-          {
-            text: 'Nombre',
-            align: 'left',
-            value: 'name'
-          },
-          { text: 'Área', value: 'area' },
-          { text: 'Entidad', value: 'entidad' },
-          { text: 'Fecha', value: 'fecha' },
-          { text: 'Semáforo', value: 'semaforo' },
-          { text: '' , sortable: false, value: 'iron' },
-          { text: '' , sortable: false, value: 'reporte' }
+  data() {
+    return {
+      dialog: false,
+      semaforo: null,
+      direction: 'top',
+      fab: false,
+      fling: false,
+      hover: false,
+      tabs: null,
+      top: false,
+      right: true,
+      bottom: true,
+      left: false,
+      menu: false,
 
-        ],
-        desserts: [
-          {
-            img: 'logo',
-            value: false,
-            name: 'Daniel Rodríguez Valladarest Carrillo',
-            area: 'Seguridad',
-            entidad: 'CONFIANZA',
-            evaluacion: 'Operador',
-            fecha: '2018/09/08 08:04:11',
-            semaforo: 'Excelente',
-            iron: 'lapiz verde',
-            reporte:'reporte'
-          },
-                 {
-            img: 'logo',
-            value: false,
-            name: 'Angel Rodríguez Valladarest',
-            area: 'Seguridad',
-            entidad: 'CONFIANZA',
-            evaluacion: 'GCP Cumplimiento Institucional',
-            fecha: '2018/09/08 08:04:11',
-            semaforo: 'Excelente',
-            iron: 'lapiz verde',
-            reporte:'reporte'
-          },
-                 {
-            img: 'logo',
-            value: false,
-            name: 'Javier Rodríguez Valladarest',
-            area: 'Seguridad',
-            entidad: 'CONFIANZA',
-            evaluacion: 'GCP Cumplimiento Institucional',
-            fecha: '2018/09/08 08:04:11',
-            semaforo: 'Excelente',
-            iron: 'lapiz verde',
-            reporte:'reporte'
-          },
-          {
-     img: 'logo',
-     value: false,
-     name: 'Javier Rodríguez Valladarest',
-     area: 'Seguridad',
-     entidad: 'CONFIANZA',
-     evaluacion: 'GCP Cumplimiento Institucional',
-     fecha: '2018/09/08 08:04:11',
-     semaforo: 'Excelente',
-     iron: 'lapiz verde',
-     reporte:'reporte'
-   },
-   {
-   img: 'logo',
-   value: false,
-   name: 'Avier Rodríguez Valladarest',
-   area: 'Beguridad',
-   entidad: 'CONFIANZA',
-   evaluacion: 'GCP Cumplimiento Institucional',
-   fecha: '2018/09/08 08:04:11',
-   semaforo: 'Excelente',
-   iron: 'lapiz verde',
-   reporte:'reporte'
- },
- {
- img: 'logo',
- value: false,
- name: 'Cavier Rodríguez Valladarest',
- area: 'Aeguridad',
- entidad: 'BONFIANZA',
- evaluacion: 'GCP Cumplimiento Institucional',
- fecha: '2018/09/08 08:04:11',
- semaforo: 'Excelente',
- iron: 'lapiz verde',
- reporte:'reporte'
-},
-{
-img: 'logo',
-value: false,
-name: 'Davier Rodríguez Valladarest',
-area: 'Eeguridad',
-entidad: 'NFIANZA',
-evaluacion: 'GCP Cumplimiento Institucional',
-fecha: '2018/09/08 08:04:11',
-semaforo: 'Regular',
-iron: 'lapiz verde',
-reporte:'reporte'
-},
+      transition: 'slide-y-reverse-transition',
+      semaforos: [
+        'Riesgo',
+        'Carente',
+        'Regular',
+        'Bien',
+        'Excelente'
+      ],
+      headers: [{
+          text: '',
+          sortable: false,
+          value: 'img'
+        },
+        {
+          text: 'Nombre',
+          align: 'left',
+          value: 'name'
+        },
+        {
+          text: 'Área',
+          value: 'area'
+        },
+        {
+          text: 'Entidad',
+          value: 'entidad'
+        },
+        {
+          text: 'Fecha',
+          value: 'fecha'
+        },
+        {
+          text: 'Semáforo',
+          value: 'semaforo'
+        },
+        {
+          text: '',
+          sortable: false,
+          value: 'iron'
+        },
+        {
+          text: '',
+          sortable: false,
+          value: 'reporte'
+        }
 
-        ]
-}
-},
-watch: {
-  dialog (val) {
-    if (!val) return
+      ],
+      desserts: [{
+          img: 'logo',
+          value: false,
+          name: 'Daniel Rodríguez Valladarest Carrillo',
+          area: 'Seguridad',
+          entidad: 'CONFIANZA',
+          evaluacion: 'Operador',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Angel Rodríguez Valladarest',
+          area: 'Seguridad',
+          entidad: 'CONFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Javier Rodríguez Valladarest',
+          area: 'Seguridad',
+          entidad: 'CONFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Javier Rodríguez Valladarest',
+          area: 'Seguridad',
+          entidad: 'CONFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Avier Rodríguez Valladarest',
+          area: 'Beguridad',
+          entidad: 'CONFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Cavier Rodríguez Valladarest',
+          area: 'Aeguridad',
+          entidad: 'BONFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Excelente',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
+        {
+          img: 'logo',
+          value: false,
+          name: 'Davier Rodríguez Valladarest',
+          area: 'Eeguridad',
+          entidad: 'NFIANZA',
+          evaluacion: 'GCP Cumplimiento Institucional',
+          fecha: '2018/09/08 08:04:11',
+          semaforo: 'Regular',
+          iron: 'lapiz verde',
+          reporte: 'reporte'
+        },
 
-    setTimeout(() => (this.dialog = false), 4000)
+      ]
+    }
+  },
+  watch: {
+    dialog(val) {
+      if (!val) return
+
+      setTimeout(() => (this.dialog = false), 4000)
+    }
   }
-}
 }
 </script>
 
