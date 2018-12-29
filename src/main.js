@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import Vuex from 'vuex'
 import Vuetify from 'vuetify'
 import VeeValidate from 'vee-validate';
 import 'vuetify/dist/vuetify.min.css'
@@ -22,8 +23,9 @@ import FormContacto from '@/components/Forms/FormContacto.vue'
 Vue.use(VueRouter)
 Vue.use(Vuetify)
 Vue.use(VeeValidate)
+Vue.use(Vuex)
 
-Vue.config.productionTip = false
+Vue.config.productionTip = true
 
 //Definimos las rutas
 const routes =

@@ -23,11 +23,11 @@
       </v-avatar>
       <h4>Positive Compliance LLC</h4>
 
-<v-btn to="/contacto" color="blue-grey" dark>
+<v-btn to="/contacto" color="blue-grey" fab small dark>
         <v-icon>help_outline</v-icon>
       </v-btn>
 
-<v-btn color="red darken-1" dark>
+<v-btn to="/" fab small color="red darken-1" dark>
         <v-icon>close</v-icon>
       </v-btn>
 

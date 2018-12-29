@@ -21,7 +21,6 @@
               :key="item.title"
               :prepend-icon="item.action"
               value="true"
-
             >
 
               <v-list-tile slot="activator">
@@ -34,6 +33,7 @@
                 v-for="subItem in item.items"
                 :key="subItem.title"
                 :to="subItem.direction"
+                ripple
               >
                 <v-list-tile-action>
                   <v-icon>{{ subItem.action }}</v-icon>

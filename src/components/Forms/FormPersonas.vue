@@ -122,7 +122,7 @@
             ></v-select></td>
           </tr>
         </table>
-        <v-btn @click="clear">Borrar</v-btn>
+        <v-btn to="/personas" @click="clear">Cancelar</v-btn>
         <v-btn @click="submit">Aceptar</v-btn>
         <h5>* Campos Obligatorios</h5>
 
