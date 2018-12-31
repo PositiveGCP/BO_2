@@ -19,6 +19,7 @@ import HistorialEvaluaciones from '@/components/Forms/HistorialEvaluaciones.vue'
 import FormCuentas from '@/components/Forms/FormCuentas.vue'
 import FormUsuarios from '@/components/Forms/FormUsuarios.vue'
 import FormContacto from '@/components/Forms/FormContacto.vue'
+import store from './store'
 
 Vue.use(VueRouter)
 Vue.use(Vuetify)
@@ -54,22 +55,6 @@ const router = new VueRouter({
 
 new Vue({
   router,
+  store,
   render: h => h(Layout)
 }).$mount('#app')
-
-// Vuex
-// Make sure to call Vue.use(Vuex) first if using a module system
-
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  }
-})
-store.commit('increment')
-
-console.log(store.state.count) // -> 1
